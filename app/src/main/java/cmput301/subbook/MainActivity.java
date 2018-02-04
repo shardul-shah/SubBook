@@ -52,13 +52,13 @@ public class MainActivity extends AppCompatActivity {
         comment_text = (EditText)findViewById(R.id.Comment);
         charge_text = (EditText)findViewById(R.id.Charge);
 
-        setContentView(R.layout.list_rows);
 
         Button EditButton = (Button) findViewById(R.id.edit_btn);
         Button DeleteButton = (Button) findViewById(R.id.delete_btn);
 
-        Sub_Records = (ListView)findViewById(R.id.listView); //bug FIXME
+        Sub_Records = (ListView)findViewById(R.id.listView); //bug potentially FIXME
 
+        System.out.println("Chehcking Null status" + Sub_Records);
         EditButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -94,14 +94,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
 
         super.onStart();
-
+       // Sub_Records = (ListView)findViewById(R.id.listView); //bug FIXME
         //FIXME
         loadFromFile();
 
-        adapter = new ArrayAdapter<Record>(this,
-                R.layout.list_rows, RecordList);
-        Sub_Records.setAdapter(adapter);
+        System.out.println("Chehcking Null status" + Sub_Records);
 
+
+        Sub_Records.setAdapter(adapter);
+        System.out.println("Chehcking Null status" + Sub_Records);
     }
 
     private void loadFromFile() {
