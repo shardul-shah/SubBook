@@ -3,6 +3,8 @@ package cmput301.subbook;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import java.util.ArrayList;
+
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.view.View;
@@ -24,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
         text = (TextView) findViewById(R.id.mainText);
 
-        subListVal = new ArrayList<String>();
+        ArrayList<String> subListVal = new ArrayList<String>();
+      //  subListVal = new ArrayList<String>();
 
         subListVal.add("Netflix");
         subListVal.add("Github");
@@ -32,12 +35,22 @@ public class MainActivity extends AppCompatActivity {
         subListVal.add("Gym");
 
 
-        ArrayAdapter<String> adapter;
+      /*  ArrayAdapter<String> adapter;
 
         adapter = new ArrayAdapter <String>(this, R.layout.list_rows, R.id.listText, subListVal);
 
         ListView listView = (ListView) findViewById(android.R.id.list);
-        listView.setAdapter(adapter);
+        listView.setAdapter(adapter); */
+
+        CustomAdapter adapter = new CustomAdapter(subListVal, this);
+
+        //handle listview and assign adapter
+        ListView lView = (ListView) findViewById(R.id.listView);
+        lView.setAdapter(adapter);
+
+        Button add_btn = new Button(this);
+        add_btn.setText("Add New");
+        lView.addFooterView(add_btn);
 
     }
 
