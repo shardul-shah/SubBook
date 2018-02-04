@@ -2,32 +2,34 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="horizontal" > <!-- horizontal/vertical alligns layout of element accordingly -->
 
     <TextView
     android:id="@+id/listText"
-    android:layout_width="wrap_content"
+        android:layout_width = "fill_parent"
     android:layout_height="wrap_content"
     android:padding="10dp"
     android:textSize="20sp"
+        android:layout_weight="1"
     android:textColor="#ffe600" />
+
 
     <Button
         android:id="@+id/delete_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
+        android:layout_gravity="end"
+
         android:layout_marginRight="5dp"
         android:text="Delete" />
 
 
     <Button
         android:id="@+id/edit_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="right"
         android:layout_toLeftOf="@id/delete_btn"
-        android:layout_centerVertical="true"
         android:layout_marginRight="10dp"
         android:text="Edit" />
 

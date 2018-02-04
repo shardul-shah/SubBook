@@ -54,6 +54,19 @@ public class Record {
 
     }
 
+    public void setComment(String comment)
+    {
+        if (comment.length() < 30)
+        {
+            this.comment = comment;
+        }
+
+        else
+        {
+            //throw new Exception
+        }
+    }
+
 
 
 
