@@ -52,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
         comment_text = (EditText)findViewById(R.id.Comment);
         charge_text = (EditText)findViewById(R.id.Charge);
 
+        setContentView(R.layout.list_rows);
+
         Button EditButton = (Button) findViewById(R.id.edit_btn);
         Button DeleteButton = (Button) findViewById(R.id.delete_btn);
 
