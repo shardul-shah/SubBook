@@ -1,6 +1,5 @@
 package cmput301.subbook;
 
-import java.util.Currency;
 import java.util.Date;
 
 /**
@@ -9,14 +8,16 @@ import java.util.Date;
 
 public class Record {
     private String name;
-    private Date date;
-    private Currency monthly_charge;
+    private String date;
+    private Double monthly_charge;
     private String comment;
 
-    Record(String name, Currency monthly_charge)
+    Record(String name, Double monthly_charge, String comment, String date)
     {
         this.name = name;
         this.monthly_charge = monthly_charge;
+        this.comment = comment;
+        this.date = date;
     }
 
     public String getName()
@@ -24,12 +25,12 @@ public class Record {
         return name;
     }
 
-    public Date getDate()
+    public String getDate()
     {
         return date;
     }
 
-    public Currency getMonthlyCharge()
+    public Double getMonthlyCharge()
     {
         return monthly_charge;
     }
@@ -67,9 +68,9 @@ public class Record {
         }
     }
 
-
-
-
-
+    public void setMonthly_charge(Double amnt)
+    {
+        this.monthly_charge = amnt;
+    }
 
 }

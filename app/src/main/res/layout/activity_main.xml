@@ -27,7 +27,10 @@
         android:layout_below="@+id/mainText"
         android:background="#e6a1a1"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        tools:layout_editor_absoluteY="0dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="50.0sp"/>
+        <!-- taken from https://stackoverflow.com/questions/4984313/spacing-between-listview-items-android on 2/3/2018, for spacing-->
 
     <!-- <Button
         android:id="@+id/button"

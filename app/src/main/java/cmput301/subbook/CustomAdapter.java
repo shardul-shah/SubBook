@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
@@ -16,10 +17,10 @@ import java.util.ArrayList;
  */
 
 public class CustomAdapter extends BaseAdapter implements ListAdapter {
-    private ArrayList<String> list= new ArrayList<String>();
+    private ArrayList<Record> list= new ArrayList<Record>();
     private Context context;
 
-    public CustomAdapter(ArrayList<String> list, Context context) {
+    public CustomAdapter(ArrayList<Record> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -49,7 +50,7 @@ public class CustomAdapter extends BaseAdapter implements ListAdapter {
 
         //Handle TextView and display string from your list
         TextView listItemText = (TextView)view.findViewById(R.id.listText);
-        listItemText.setText(list.get(position));
+        //listItemText.setText(list.get(position));
 
         //Handle buttons and add onClickListeners
         Button deleteBtn = (Button)view.findViewById(R.id.delete_btn);
@@ -67,18 +68,17 @@ public class CustomAdapter extends BaseAdapter implements ListAdapter {
             @Override
             public void onClick(View v) {
 
+                EditText NameField = (EditText)v.findViewById(R.id.Name);
+
+               // String temp_name = EditText.getText().toString();
+               // list.get(0).setName(temp_name);
+
                 notifyDataSetChanged();
             }
         });
 
         return view;
     }
-
-
-
-
-
-
 
 
 }
